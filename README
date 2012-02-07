@@ -1,3 +1,5 @@
+OmnibarMumpified is a modified Version of Omnibar extended with the german Wikipedia, Google and Github.
+
 This extension support search from location bar without installing any native plugins into your system. It simple
 javascript extension based on Safari 5 API.
 
@@ -16,6 +18,9 @@ To do this just prefix search query by shortcut:
   * 'wa' is 'WolframAlpha'
   * 'f', 'fb' is 'Facebook'
   * 'w', 'wp', 'wi' is 'Wikipedia'
+  * 'wd', 'wpd' is 'Wikipedia Germany'
+  * 'gd', 'gde' is Google Germany
+  * 'gh', 'git' is Github
 
 For example, if your Default Engine it not Wikipedia, then you can type 'w Antoine de Saint-Exupéry' in Location Bar
 and Safari open Wikipedia page about one greatest writer from Marseille.
