@@ -52,7 +52,24 @@ Omnibar = new function () {
             shortcuts: ["w", "wp", "wi"],
             searchPattern: "wikipedia.org/wiki/Special:Search/${query}?from=${extensionId}",
             httpsAvailable: true
+        },
+        "wikipedia_de": {
+            shortcuts: ["wd", "wpd"],
+            searchPattern: "de.wikipedia.org/wiki/Special:Search/${query}?from=${extensionId}",
+            httpsAvailable: true
+        },
+
+        "google_de": {
+            shortcuts: ["gd", "gde"],
+            searchPattern: "google.de/search?client=safari&q=${query}&ie=UTF-8&oe=UTF-8&from=${extensionId}",
+            httpsAvailable: true
+        },
+        "github": {
+            shortcuts: ["gh", "git"],
+            searchPattern: "github.com/search?q=${query}&type=Everything&repo=&langOverride=&start_value=1",
+            httpsAvailable: true
         }
+
     };
 
     this.splitText = function(text) {
@@ -67,7 +84,7 @@ Omnibar = new function () {
 
     this.toSearchUrl = function (text) {
         var request = this.splitText(text);
-        var searchEngine = Omnibar.Settings.getSearchEngine();
+        var searchEngine =  Omnibar.Settings.getSearchEngine();
         if (request.prefix) {
             // Try to find shortcut
             if (request.prefix === '?') {
@@ -82,7 +99,7 @@ Omnibar = new function () {
         }
         return Omnibar.Settings.getSearchPattern(searchEngine)
                 .replace("${query}", text.trim())
-                .replace("${extensionId}", Omnibar.Settings.getExtensionId());
+                .replace("${extensionId}", Omnibar.DEFAULT_EXTENSION_ID);
     };
 
     safari.application.addEventListener("beforeNavigate", function (event) {
@@ -94,6 +111,7 @@ Omnibar = new function () {
 }();
 
 Omnibar.Settings = new function() {
+
     this.getExtensionId = function () {
         var extensionId = safari.extension.settings.extensionId;
         if (extensionId == null) {
@@ -101,6 +119,8 @@ Omnibar.Settings = new function() {
         }
         return extensionId;
     };
+
+
 
     this.getSearchEngine = function() {
         var engine = Omnibar.ENGINES[safari.extension.settings.searchEngineId];
@@ -130,4 +150,5 @@ Omnibar.Settings = new function() {
         return (safari.extension.settings.useHttps && engine.httpsAvailable ? "https" : "http") +
                 "://" + engine.searchPattern;
     };
+
 }();

@@ -20,6 +20,9 @@
 			<string>WolframAlpha</string>
 			<string>Facebook</string>
 			<string>Wikipedia</string>
+			<string>Wikipedia_de</string>
+			<string>Google_de</string>
+			<string>Github</string>
 		</array>
 		<key>Type</key>
 		<string>ListBox</string>
@@ -34,6 +37,9 @@
 			<string>wolframalpha</string>
 			<string>facebook</string>
 			<string>wikipedia</string>
+			<string>wikipedia_de</string>
+			<string>google_de</string>
+			<string>github</string>
 		</array>
 	</dict>
 	<dict>
