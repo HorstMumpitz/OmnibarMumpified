@@ -68,6 +68,11 @@ Omnibar = new function () {
             shortcuts: ["gh", "git"],
             searchPattern: "github.com/search?q=${query}&type=Everything&repo=&langOverride=&start_value=1",
             httpsAvailable: true
+        },
+        "lisa": {
+            shortcuts: ["l", "li"],
+            searchPattern: "lisa.time-is-money.org/show?query=${query}",
+            httpsAvailable: false
         }
 
     };

@@ -23,6 +23,7 @@
 			<string>Wikipedia_de</string>
 			<string>Google_de</string>
 			<string>Github</string>
+			<string>Lisa</string>
 		</array>
 		<key>Type</key>
 		<string>ListBox</string>
@@ -40,6 +41,7 @@
 			<string>wikipedia_de</string>
 			<string>google_de</string>
 			<string>github</string>
+			<string>lisa</string>
 		</array>
 	</dict>
 	<dict>
